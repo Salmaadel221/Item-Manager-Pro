@@ -1,0 +1,61 @@
+- What is crud system ?? 
+Creat Read Update Delet >> Data 
+Crud >> يخليك تنشئ بيانات وتقرأ بيانات وتعدل على البيانات وتمسح البيانات
+CrudS ?? We Can Serch Also 
+
+نحن في هذا الدرس نضيف عيه عليها S لتكون cruds و ال S هنا تمثل SEARCH
+هذه هي الخمس عمليات الاساسية للتعامل مع البيانات في برنامج
+
+فاذا ذكرت البيانات ذكر معها تلك الخمس عمليات
+انشاء بيانات
+قراءة تلك البيانات و عرضها
+تعديل البيانات و تحديثها
+حذف البيانات
+البحث عن البيانات
+
+يمكنك تنفيز عمليات CRUDS تلك على اي برنامج يحتوي على بيانات و بأي لغة برمجة.
+
+مميزات البرنامج
+اضافة منتج
+اضافة اي عدد من المنتجات بضغطة
+قراءة و عرض المنتج
+حذف المنتج
+حذف كل المنتجات بضغطة
+البحث عن المنتجات بالاسم و التصنيف
+حفظ المنتجات بشكل دائم في local storage
+قادر على حساب ضريبة المنتج و مصاريف الاعلانات و ايجاد السعر النهائي
+ لن يتم اضافة البيانات الا اذا كانت صحيحة
+
+ >>> اي مشروع ببأخ بتقسمه لخريطه عشان تعرف انت رايح فين وجي منين 
+ 
+
+ وقبل ما نخش في الجافا لازم نقسم  برضوشغل الجافا 
+//  1- fn get total price
+//  2- fn creat element
+//  3- save data in local storage
+//  4- clear inputs
+//  5- read
+//  6- count
+//  7- delete
+//  8- update
+//  9- search
+//  10- clean data
+
+عندنا مشكلخه في الكود ده ليه لان الجفا اسكريبت بتقرا الكود عندك سطر بسطر بتيجي عند االاراى بتلاقيها فاضيه 
+فكل لما تعمل ريلود تلاقي البيانات الي فيها طارت 
+let productData = [];
+creat.onclick = function creatElement() {
+  // عارف بقا لو كنا اكمتفينا بالاوبجيكت على كل ضغطه انت هتضغطها هيعمل ابديت للبينات الي هندم بمعنى ان اي حاجه قديمه هتكون طارت
+  let singleProudct = {
+    title: title.value,
+    price: price.value,
+    taxes: taxes.value,
+    ads: ads.value,
+    discount: discount.value,
+    total: total.innerHTML,
+    count: count.value,
+    category: category.value,
+  };
+  productData.push(singleProudct);
+  window.localStorage.setItem("productData", JSON.stringify(productData));
+};

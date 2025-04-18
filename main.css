@@ -1,0 +1,336 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --main-color: rgb(0, 187, 255);
+}
+body {
+  box-sizing: border-box;
+  color: white;
+  font-family: system-ui;
+  overflow-x: hidden;
+  background-color: #eee;
+  position: relative;
+}
+
+body.dark {
+  background-color: #222;
+} /* #9b59b6 */
+
+.checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.checkbox-label {
+  background-color: #111;
+  width: 50px;
+  height: 26px;
+  border-radius: 50px;
+  position: absolute;
+  right: 0;
+  top: 5px;
+  padding: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fa-moon {
+  color: #f1c40f;
+}
+
+.fa-sun {
+  color: #f39c12;
+}
+
+.checkbox-label .ball {
+  background-color: #fff;
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  border-radius: 50%;
+  transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .checkbox-label .ball {
+  transform: translateX(24px);
+}
+
+/* Start CRUDS parent */
+.crud {
+  width: 80%;
+  margin: 0 auto;
+  text-align: start;
+  position: relative;
+}
+.crud .head {
+  text-align: center;
+  text-transform: uppercase;
+  margin: 30px 0;
+}
+.crud .head h2 {
+  font-size: 40px;
+  color: rgb(255, 255, 255);
+}
+.crud .head h2.dark {
+  color: #111;
+}
+.crud .head p {
+  margin-top: 10px;
+  font-size: 18px;
+  color: var(--main-color);
+}
+@media (max-width: 991px) {
+  .crud {
+    width: 85%;
+  }
+  .crud .head h2 {
+    font-size: 25px;
+  }
+  .crud .head p {
+    font-size: 15px;
+  }
+}
+/* End CRUDS parent */
+
+/* Satrt Inputs */
+input {
+  width: 100%;
+  height: 35px;
+  outline: none;
+  border: none;
+
+  color: white;
+  margin: 8px 0;
+  border-radius: 5px;
+  padding: 30px 15px;
+  background-color: #111;
+}
+
+input.dark {
+  background-color: #555;
+}
+input.dark:focus {
+  background-color: #777;
+}
+input:focus {
+  background-color: #555;
+  transition: 0.5s;
+  transform: scale(1.051);
+}
+input::placeholder {
+  color: var(--main-color);
+  font-weight: lighter;
+  font-variant: small-caps;
+}
+
+.price {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+.price input {
+  width: 20%;
+}
+
+#total {
+  background-color: var(--main-color);
+  padding: 5px 2px;
+  border-radius: 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#total::before {
+  content: "Total : ";
+  font-variant: small-caps;
+  margin-right: 5px;
+}
+
+#submit {
+  width: 90%;
+  padding: 16px;
+  border-radius: 5pc;
+  background-color: #111;
+  border: none;
+  outline: none;
+  transition: 1s;
+  color: var(--main-color);
+  cursor: pointer;
+  font-variant: small-caps;
+  font-size: 18px;
+  letter-spacing: 3px;
+  display: block;
+  margin: 10px auto;
+  font-weight: bolder;
+}
+#submit.dark {
+  background-color: #777;
+}
+#submit:hover {
+  background-color: var(--main-color);
+  box-shadow: rgb(0, 187, 255) 0px 0px 7px;
+  color: #111;
+  transform: scale(1.051);
+}
+#submit:focus {
+  background-color: #009532;
+  box-shadow: #009532 0px 0px 7px;
+  width: 30%;
+  color: white;
+}
+@media (max-width: 991px) {
+  input {
+    padding: 25px 12.5px;
+  }
+  .price input {
+    width: 45%;
+  }
+  #total {
+    width: 100%;
+    margin-top: 10px;
+  }
+  #submit {
+    padding: 12px;
+  }
+  #submit:focus {
+    width: 50%;
+  }
+}
+
+/* End Inputs */
+
+/* Start Btn Search */
+.btnSearch {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+button {
+  padding: 16px;
+  border-radius: 5pc;
+  background-color: var(--main-color);
+  color: #111;
+  border: none;
+  outline: none;
+  transition: 1s;
+  cursor: pointer;
+  font-variant: small-caps;
+  font-weight: bolder;
+  font-size: 15px;
+  letter-spacing: 1px;
+  display: block;
+  margin: 10px auto 0;
+}
+
+.btnSearch button:hover {
+  background-color: #111;
+  color: var(--main-color);
+  box-shadow: 0px 0px 7px var(--main-color);
+  transform: scale(1.051);
+}
+
+@media (max-width: 991px) {
+  .btnSearch button {
+    width: 90%;
+  }
+  button {
+    padding: 10px;
+  }
+}
+.dleteall.dark {
+  background-color: #777;
+}
+/* End Btn Search */
+table {
+  width: 100%;
+  text-align: center;
+  margin: 20px 0;
+  font-variant: small-caps;
+}
+table th {
+  text-transform: uppercase;
+  font-weight: bolder;
+}
+
+table th.dark {
+  background-color: #555;
+}
+button:hover {
+  background-color: #111;
+  color: var(--main-color);
+  box-shadow: 0px 0px 7px var(--main-color);
+  transform: scale(1.051);
+}
+
+table tbody #delete:hover {
+  background-color: #990606;
+  color: white;
+  box-shadow: #990606 0px 0px 7px;
+}
+
+table th,
+td {
+  padding: 5px;
+}
+td {
+  color: white;
+}
+td.dark {
+  color: black;
+}
+th {
+  background-color: #333;
+}
+table button {
+  padding: 9px;
+}
+@media (max-width: 750px) {
+  table {
+    overflow-x: scroll;
+    display: block;
+  }
+  th {
+    font-size: 13px;
+  }
+  table button {
+    padding: 6px;
+    font-size: 12px;
+  }
+}
+.animation {
+  animation: shake 0.7s ease-in-out 4, colorChange 0.5s ease-in-out 10 alternate;
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25%,
+  75% {
+    transform: translateX(-10px);
+  }
+  50% {
+    transform: translateX(10px);
+  }
+}
+
+@keyframes colorChange {
+  0% {
+    background-color: #ff0000; /* Red color */
+    color: #ffffff; /* White text color */
+  }
+  100% {
+    background-color: #cbcbcb; /* White color */
+    color: #ff0000; /* Red text color */
+  }
+}
